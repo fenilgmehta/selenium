@@ -313,18 +313,19 @@ pin_browsers()
 
 http_archive(
     name = "rules_ruby",
-    sha256 = "bb0bffb0285ff8fa9a967fc2580ddf3b511818a6baf269dcd6c5c6076c4921d8",
-    strip_prefix = "rules_ruby-c3cefa71d0111a04c9ce0672c65d376262d8d975",
-    url = "https://github.com/p0deje/rules_ruby/archive/c3cefa71d0111a04c9ce0672c65d376262d8d975.zip",
+    sha256 = "d21b8987c41c3665b497f974f3306bee8c4e3db79e0135b9a2a7587f0f7473af",
+    strip_prefix = "rules_ruby-f82c07b2e7289b56cbfa81b5664e963aa55b7d67",
+    url = "https://github.com/p0deje/rules_ruby/archive/f82c07b2e7289b56cbfa81b5664e963aa55b7d67.zip",
 )
 
+load("//rb:ruby_version.bzl", "RUBY_VERSION")
 load(
     "@rules_ruby//ruby:deps.bzl",
     "rb_bundle",
     "rb_download",
 )
 
-rb_download(version = "2.7.6")
+rb_download(version = RUBY_VERSION)
 
 rb_bundle(
     name = "bundle",
